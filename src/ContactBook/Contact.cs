@@ -1,4 +1,4 @@
-namespace ConatctBook;
+namespace ContactBook;
 
 public class Contact : IEquatable<Contact>
 {
