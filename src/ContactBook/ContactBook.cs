@@ -141,7 +141,22 @@ public class ContactBook
 
     private void ProcessInput(string input)
     {
-        
+        switch (input)
+        {
+            case NEXT_PAGE: NextPage(); break;
+            case PREV_PAGE: PrePage(); break;
+            case GOTO_PAGE: GotoPage(); break;
+            case PAGE_SIZE: PageSize(); break;
+            case CREATE_CONTACT: CreateContact(); break;
+            case REVIEW_CONTACT: ReviewContact(); break;
+            case UPDATE_CONTACT: UpdateContact(); break;
+            case DELETE_CONTACT: DeleteContact(); break;
+            case FIND_CONTACTS: FindContact(); break;
+            case ORDER_CONTACTS: OrderContacts(); break;
+            case DEDUPLICATE_CONTACTS: DeduplicateContacts(); break;
+            case EXIT: Exit(); break;
+            default: break;
+        }
     }
 
     private bool ConfirmExit()
@@ -158,5 +173,65 @@ public class ContactBook
     {
         Console.Write("Press ENTER to continue.");
         while(Console.ReadKey(true).Key != ConsoleKey.Enter);
+    }
+
+    private void NextPage()
+    {
+        Console.WriteLine("Nextt Page");
+    }
+
+    private void PrePage()
+    {
+        
+    }
+
+    private void GotoPage()
+    {
+        
+    }
+
+    private void PageSize()
+    {
+        
+    }
+
+    private void CreateContact()
+    {
+        
+    }
+
+    private void ReviewContact()
+    {
+        
+    }
+
+    private void UpdateContact()
+    {
+        
+    }
+
+    private void DeleteContact()
+    {
+        
+    }
+
+    private void FindContact()
+    {
+        
+    }
+
+    private void OrderContacts()
+    {
+        
+    }
+
+    private void DeduplicateContacts()
+    {
+        
+    }
+
+    private void Exit()
+    {
+    
     }
 }
