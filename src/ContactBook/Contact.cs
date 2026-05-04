@@ -11,7 +11,7 @@ public class Contact : IEquatable<Contact>
     {
         SetFName(fname);
         SetLName(lname);
-        SetFPhone(phone);
+        SetPhone(phone);
         SetEmail(email);
     }
 
@@ -45,7 +45,7 @@ public class Contact : IEquatable<Contact>
         this.lname = lname;
     }
 
-     public void SetFPhone( string phone)
+     public void SetPhone( string phone)
     {
         this.phone = phone;
     }
