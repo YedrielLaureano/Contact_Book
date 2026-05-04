@@ -1,8 +1,6 @@
-using System.Drawing;
-using System.Text;
-using ContactBook;
-
 namespace ContactBook;
+
+using static ContactComparer;
 
 public class ContactBook
 {
@@ -433,8 +431,17 @@ public class ContactBook
 
     private void OrderContacts()
     {
-        
-    }
+        SortType[] sortType = new SortType[]
+        {
+            SortType.FName, SortType.LName, SortType.Phone, SortType.Email
+        };
+
+        int index = GetInt("Sort contacts by [0] First Name [1] Last Name [2] Phone [3] Email", 0, 3);
+
+        ContactComparer ccp = new ContactComparer(sortType[index]);
+        allContacts.Sort(ccp);
+        filteredContacts.Sort(ccp);
+        }
 
     private void DeduplicateContacts()
     {
