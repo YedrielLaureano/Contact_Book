@@ -39,10 +39,9 @@ public class ContactBook
         string input;
         do
         {
-            ShowContacts();
-
             do
             {
+                ShowContacts();
                 ShowInputOptions();
                 input = GetInput();
             }
@@ -113,7 +112,7 @@ public class ContactBook
     {
         string inputOptions = ""
         + $"[{NEXT_PAGE}] Next Page | [{CREATE_CONTACT}] Create Contact | [{DELETE_CONTACT}] Delete Contact | [{DEDUPLICATE_CONTACTS}] Deduplicate Contatacs\n"
-        + $"[{PREV_PAGE}] Prev Page | [{REVIEW_CONTACT}] Review Contact | [{FIND_CONTACTS }] Find Contact    | [{PAGE_SIZE          }] Change Page Size\n"
+        + $"[{PREV_PAGE}] Prev Page | [{REVIEW_CONTACT}] Review Contact | [{FIND_CONTACTS }] Find Contact   | [{PAGE_SIZE           }] Change Page Size\n"
         + $"[{GOTO_PAGE}] Goto Page | [{UPDATE_CONTACT}] Uptade Contact | [{ORDER_CONTACTS}] Order Contacts | [{EXIT                }] Exit\n"
         + $"\n> ";
 
@@ -123,12 +122,21 @@ public class ContactBook
 
     private string GetInput()
     {
-        return "";
+        return Console.ReadLine()!.ToUpper();
     }
 
     private bool IsValidInput(string input)
     {
-        return true;
+        if(!COMMANDS.Contains(input))
+        {
+            Console.WriteLine("ERROR: Invalid input. Plase try againg. ");
+            PressEnterContinue();
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     private void ProcessInput(string input)
