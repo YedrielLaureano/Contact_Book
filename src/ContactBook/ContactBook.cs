@@ -172,7 +172,8 @@ public class ContactBook
 
     private void ShowExitScreen()
     {
-        
+        Console.Clear();
+        Console.WriteLine("Thank you for using Simple Contact Book!");
     }
 
     private void PressEnterContinue()
